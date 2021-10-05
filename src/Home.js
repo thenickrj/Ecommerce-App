@@ -14,6 +14,7 @@ function Home() {
 
         <div className="home__row">
           <Product
+            id="1233"
             title="The lean startup"
             price={399}
             rating={5}
