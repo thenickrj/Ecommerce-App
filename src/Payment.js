@@ -72,7 +72,7 @@ function Payment() {
             <h3>Payment Mehtod</h3>
           </div>
           <div className="payment__details">
-            <form onSubmit={handleSubmit()}>
+            <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} />
               <div className="payment__priceContainer">
                 <CurrencyFormat
