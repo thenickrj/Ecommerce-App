@@ -32,10 +32,10 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
             .map((_, i) => (
               <p>⭐</p>
             ))}
-          {!hideButton && (
-            <button onClick={removeFromBasket}>Remove from Basket</button>
-          )}
         </div>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
         {/* <button onClick={removeFromBasket}>Remove from basket</button> */}
       </div>
     </div>

@@ -5,10 +5,17 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
+    // "eslint:recommended",
     "google",
   ],
   rules: {
     quotes: ["error", "double"],
   },
+  // parser: "@babel/eslint-parser",
+  // Newly added property
+  // ecmaVersion: 2017,
+
+  // parserOptions: {
+  //   ecmaVersion: 2017,
+  // },
 };
