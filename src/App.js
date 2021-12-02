@@ -11,6 +11,7 @@ import Payment from "./Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./Orders";
+import ReactNotification from "react-notifications-component";
 
 const promise = loadStripe(
   "pk_test_51JjToBSAz6mTYX283KnxV1hqIZJZcpb62a4ObSHVBL9wgdmgNhewq1BdCHJNO6i43a2K3cOmb1cAKzsNilTw9yfS00Iv2R8pKk"
@@ -40,6 +41,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ReactNotification />
         <Switch>
           <Route exact path="/">
             <Header />

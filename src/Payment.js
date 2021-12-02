@@ -57,7 +57,7 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent=payment confirmation
-
+        console.log(paymentIntent);
         db.collection("users")
           .doc(user?.uid)
           .collection("orders")
@@ -96,12 +96,12 @@ function Payment() {
         {/* Payment section - delivery address */}
         <div className="payment__section">
           <div className="payment__title">
-            <h3>Delivery address</h3>
+            <h3>Deliver To</h3>
           </div>
           <div className="payment__address">
             <p>{user?.email}</p>
-            <p>123 React Lane</p>
-            <p>CA</p>
+            {/* <p>123 React Lane</p>
+            <p>CA</p> */}
           </div>
         </div>
         {/* Payment section - Review Items */}
@@ -124,7 +124,7 @@ function Payment() {
         {/* Payment section - Payment Method */}
         <div className="payment__section">
           <div className="payment__title">
-            <h3>Payment Mehtod</h3>
+            <h3>Payment Method</h3>
           </div>
           <div className="payment__details">
             <form onSubmit={handleSubmit}>
@@ -134,6 +134,7 @@ function Payment() {
                   renderText={(value) => (
                     <>
                       <h3>Order Total: {value}</h3>
+                      <h6>For Test type 4242..... till the end</h6>
                     </>
                   )}
                   decimalScale={2}

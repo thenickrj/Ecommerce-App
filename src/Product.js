@@ -1,12 +1,32 @@
 import React from "react";
+import { store } from "react-notifications-component";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import "./notify-popup.css";
 
 function Product({ id, title, image, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
 
+  const notifyPopup = (title, message, type) => {
+    store.addNotification({
+      title: title,
+      message: message,
+      type: type,
+      background: "pink",
+      insert: "bottom",
+      container: "bottom-right",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 3000,
+        onScreen: true,
+      },
+    });
+  };
+
   const addToBasket = () => {
     // dispatch item into the data layer
+
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -17,6 +37,8 @@ function Product({ id, title, image, price, rating }) {
         rating: rating,
       },
     });
+    notifyPopup("Added to Cart", title, "success");
+    console.log(title);
   };
 
   return (

@@ -7,7 +7,7 @@ import "./Subtotal.css";
 
 function Subtotal() {
   const history = useHistory();
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="subtotal">
@@ -20,8 +20,8 @@ function Subtotal() {
               <strong>{value}</strong>
             </p>
             <small className="subtotal_gift">
-              <input type="checkbox" />
-              This order contains a gift
+              {/* <input type="checkbox" />
+              This order contains a gift */}
             </small>
           </>
         )}
@@ -31,9 +31,18 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"₹"}
       />
-      <button onClick={(e) => history.push("/payment")}>
+      {user ? (
+        <button onClick={(e) => history.push("/payment")}>
+          Proceed to Checkout
+        </button>
+      ) : (
+        <button onClick={(e) => history.push("/login")}>
+          Login to Checkout
+        </button>
+      )}
+      {/* <button onClick={(e) => history.push("/payment")}>
         Proceed to Checkout
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -4,12 +4,15 @@
   align-items: center;
 }
 
+button {
+  cursor: pointer;
+}
 .login__logo {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 100px;
   object-fit: contain;
-  width: 100px;
+  width: 200px;
   margin-right: auto;
   margin-left: auto;
 }
